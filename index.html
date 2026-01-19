@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blacks University - Confirmación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cyber: ['Orbitron', 'sans-serif'],
+              tech: ['Rajdhani', 'sans-serif'],
+            },
+            colors: {
+              'deep-black': '#050505',
+              'neon-gold': '#FFD700',
+              'neon-green': '#25D366',
+            },
+            backgroundImage: {
+              'gold-gradient': 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 50%, #B38728 100%, #FBF5B7 100%)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: white;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .holographic-border {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.1), inset 0 0 15px rgba(255, 215, 0, 0.05);
+      }
+      .neon-text-gold {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+      .neon-box-green {
+        box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
