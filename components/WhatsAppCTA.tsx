@@ -3,6 +3,20 @@ import { MessageCircle } from 'lucide-react';
 import { LINKS } from '../constants';
 
 const WhatsAppCTA: React.FC = () => {
+
+  const handleJoinClick = () => {
+    // Disparar evento de Facebook Pixel MANUALMENTE
+    // @ts-ignore
+    if (window.fbq) {
+      console.log("Disparando evento Lead...");
+      // @ts-ignore
+      window.fbq('track', 'Lead', {
+        content_name: 'Grupo WhatsApp Lanzamiento',
+        status: 'joined'
+      });
+    }
+  };
+
   return (
     <div className="w-full flex flex-col items-center gap-4 pt-2 pb-6">
       
@@ -16,6 +30,7 @@ const WhatsAppCTA: React.FC = () => {
           href={LINKS.WHATSAPP_GROUP}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleJoinClick}
           className="relative w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:to-[#075E54] text-white py-5 px-3 rounded-xl shadow-2xl transform transition-all active:scale-95 animate-[breathing_3s_ease-in-out_infinite] border border-white/10"
         >
           {/* Icon hidden on very small screens to save space for text, visible on larger */}
