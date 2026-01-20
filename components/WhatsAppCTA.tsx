@@ -16,12 +16,19 @@ const WhatsAppCTA: React.FC = () => {
           href={LINKS.WHATSAPP_GROUP}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:to-[#075E54] text-white py-5 px-4 rounded-xl shadow-2xl transform transition-all active:scale-95 animate-[breathing_3s_ease-in-out_infinite]"
+          className="relative w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:to-[#075E54] text-white py-5 px-3 rounded-xl shadow-2xl transform transition-all active:scale-95 animate-[breathing_3s_ease-in-out_infinite] border border-white/10"
         >
-          <MessageCircle className="w-8 h-8 fill-white text-transparent" />
-          <span className="font-cyber font-bold text-lg md:text-xl tracking-wide uppercase text-shadow-sm">
-            Unirme al Grupo Ahora 🟢
-          </span>
+          {/* Icon hidden on very small screens to save space for text, visible on larger */}
+          <MessageCircle className="w-6 h-6 md:w-8 md:h-8 fill-white text-transparent shrink-0" />
+          
+          <div className="flex flex-col items-start leading-none">
+             <span className="font-cyber font-bold text-sm md:text-lg tracking-wide uppercase text-shadow-sm text-left">
+              👉 Confirmar mi asiento
+            </span>
+             <span className="font-tech text-xs md:text-sm font-medium tracking-wider uppercase opacity-90">
+              Y unirme al grupo VIP
+            </span>
+          </div>
         </a>
       </div>
 
@@ -33,8 +40,8 @@ const WhatsAppCTA: React.FC = () => {
       {/* CSS for custom breathing animation */}
       <style>{`
         @keyframes breathing {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.02); }
+          0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+          50% { transform: scale(1.02); box-shadow: 0 0 20px 0 rgba(37, 211, 102, 0.4); }
         }
       `}</style>
     </div>
