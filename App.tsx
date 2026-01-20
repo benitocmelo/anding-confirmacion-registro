@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Background from './components/Background';
 import Header from './components/Header';
 import InfoCard from './components/InfoCard';
@@ -6,6 +6,15 @@ import DigitalTicket from './components/DigitalTicket';
 import WhatsAppCTA from './components/WhatsAppCTA';
 
 const App: React.FC = () => {
+  useEffect(() => {
+    // Forzar el disparo del Pixel cuando la app carga
+    // @ts-ignore
+    if (typeof window.fbq === 'function') {
+      // @ts-ignore
+      window.fbq('track', 'PageView');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden selection:bg-yellow-500/30">
       <Background />
