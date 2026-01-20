@@ -5,14 +5,49 @@ import InfoCard from './components/InfoCard';
 import DigitalTicket from './components/DigitalTicket';
 import WhatsAppCTA from './components/WhatsAppCTA';
 
+declare global {
+  interface Window {
+    fbq: any;
+    _fbq: any;
+  }
+}
+
 const App: React.FC = () => {
   useEffect(() => {
-    // Forzar el disparo del Pixel cuando la app carga
-    // @ts-ignore
-    if (typeof window.fbq === 'function') {
-      // @ts-ignore
-      window.fbq('track', 'PageView');
+    // 1. Definir el Pixel ID
+    const PIXEL_ID = '1615717146280012';
+
+    // 2. Inyectar el script de Facebook manualmente si no existe
+    if (!window.fbq) {
+      !function(f: any, b: any, e: any, v: any, n?: any, t?: any, s?: any) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      
+      window.fbq('init', PIXEL_ID);
     }
+
+    // 3. Disparar el evento PageView con un pequeño retraso de seguridad
+    const timer = setTimeout(() => {
+      if (window.fbq) {
+        window.fbq('track', 'PageView');
+        console.log("Facebook Pixel: PageView fired!"); // Para depuración
+      }
+    }, 1000); // Retraso de 1 segundo para asegurar carga
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
