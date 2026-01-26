@@ -50,7 +50,7 @@ const InfoCard: React.FC = () => {
             <div>
               <h3 className="text-white font-cyber text-xs font-bold uppercase mb-0.5">Prioridad de Acceso</h3>
               <p className="text-sm font-tech text-gray-400 leading-snug">
-                El enlace del 22 de Enero se publicará en el grupo 1 hora antes que en cualquier otro lugar.
+                El enlace del 29 de Enero se publicará en el grupo 1 hora antes que en cualquier otro lugar.
               </p>
             </div>
           </li>

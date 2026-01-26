@@ -3,11 +3,11 @@ export const ASSETS = {
 };
 
 export const LINKS = {
-  WHATSAPP_GROUP: "https://chat.whatsapp.com/DljmTo3zXjAAfJ3TI8MAzN"
+  WHATSAPP_GROUP: "https://chat.whatsapp.com/Hh0GkS5E62rFrp31C65Dnm"
 };
 
 export const COPY = {
-  EVENT_DATE: "Jueves 22 de Enero",
+  EVENT_DATE: "Jueves 29 de Enero",
   EVENT_TIME: "20:00H (Hora Colombia 🇨🇴)",
   EVENT_LOCATION: "Enlace por este grupo"
 };
