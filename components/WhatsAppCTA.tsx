@@ -48,10 +48,10 @@ const WhatsAppCTA: React.FC = () => {
           
           <div className="flex flex-col items-start leading-none relative z-10">
              <span className="font-cyber font-bold text-sm md:text-lg tracking-wide uppercase text-shadow-sm text-left">
-              UNIRME AL GRUPO VIP AHORA
+              CONFIRMAR MI CUPO AHORA 👉
             </span>
              <span className="font-tech text-xs md:text-sm font-medium tracking-wider uppercase opacity-90">
-              👉 Confirmar mi asiento
+              Último paso requerido
             </span>
           </div>
         </a>
